@@ -6,6 +6,29 @@ using namespace std;
 
 
 int main(int argc, char const *argv[]){
+    PWD pass1(1,"This is the pass1"), pass2("pass2", 2, "This is the pass2");
+	PWD pass3("pass3", 3);
+	
+
+	cout << "Password 1:"						<<endl;
+	cout << "\tId\t->\t"		<<pass1.getId()	<<endl;
+	cout << "\tValue\t->\t"		<<pass1.getPass()<<endl;
+	cout << "\tDescription\t->\t"<<pass1.getDsc() <<endl;
+
+
+	cout << "Password 2:"						<<endl;
+	cout << "\tId\t->\t"		<<pass2.getId()	<<endl;
+	cout << "\tValue\t->\t"		<<pass2.getPass()<<endl;
+	cout << "\tDescription\t->\t"<<pass2.getDsc() <<endl;
+
+
+	cout << "Password 3:"						<<endl;
+	cout << "\tId\t->\t"		<<pass3.getId()	<<endl;
+	cout << "\tValue\t->\t"		<<pass3.getPass()<<endl;
+	cout << "\tDescription\t->\t"<<pass3.getDsc() <<endl;
+
+	
+/*
 
 	cout<<"Empezando"<<endl;
 
@@ -17,6 +40,6 @@ int main(int argc, char const *argv[]){
 	cout<<"descripcion:"<<pass1.getDsc()<<endl;
 	cout<<"Id de la 2 -> "<<pass2.getId()<<endl;
 	cout<<"descripcion:"<<pass2.getDsc()<<endl;
-
+*/
 	return 0;
 }
