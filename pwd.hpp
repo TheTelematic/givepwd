@@ -19,9 +19,10 @@ namespace pwd{
 	public:
 				PWD(int id, string description=""); //Init without a password
 				PWD(string value, int id, string description=""); //Complete init
-		int 	getId();
-		string	getDsc(); // Get description
-		string	getPass();
+		int 	getId()     const;
+		string	getDsc()    const; // Get description
+		string	getPass()   const;
+        void    setDsc(string desc);
 		void 	setPass(string pass); // Set the password
 		void	createPass(int length);
 				~PWD();

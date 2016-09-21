@@ -15,12 +15,25 @@ int main(int argc, char const *argv[]){
 	cout << "\tValue\t->\t"		<<pass1.getPass()<<endl;
 	cout << "\tDescription\t->\t"<<pass1.getDsc() <<endl;
 
+    cout << "Creating a password" << endl;
+    pass1.createPass(20);
+
+    cout << "The result: " << pass1.getPass() << endl;
+
 
 	cout << "Password 2:"						<<endl;
 	cout << "\tId\t->\t"		<<pass2.getId()	<<endl;
 	cout << "\tValue\t->\t"		<<pass2.getPass()<<endl;
 	cout << "\tDescription\t->\t"<<pass2.getDsc() <<endl;
 
+    cout << "Setting a new password and description" << endl;
+    pass2.setPass("New password");
+    pass2.setDsc("New description");
+
+    cout << "Password 2:"						<<endl;
+    cout << "\tId\t->\t"		<<pass2.getId()	<<endl;
+    cout << "\tValue\t->\t"		<<pass2.getPass()<<endl;
+    cout << "\tDescription\t->\t"<<pass2.getDsc() <<endl;
 
 	cout << "Password 3:"						<<endl;
 	cout << "\tId\t->\t"		<<pass3.getId()	<<endl;
