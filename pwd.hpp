@@ -22,6 +22,7 @@ namespace pwd{
 		char 	getCharacter(int pos);
         bool    character_valid(char c);
 	public:
+                PWD(){}
 				PWD(int id, string description=""); //Init without a password
 				PWD(string value, int id, string description=""); //Complete init
 		int 	getId()     const;
@@ -31,7 +32,7 @@ namespace pwd{
 		void 	setPass(string pass); // Set the password
 		void	createPass(int length);
 				~PWD();
-		
+        PWD(const PWD &p);
 	};
 
 }
