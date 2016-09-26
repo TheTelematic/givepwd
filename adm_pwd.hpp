@@ -2,12 +2,13 @@
 #define __ADM__PWD__HPP__
 
 #include "pwd.hpp"
+#include <vector>
 
 namespace pwd{
     class AdmPwd{
     private:
         int num_pwds;
-        List<PWD> pwds;
+        std::vector<pwd::PWD> pwds;
 
     public:
                 AdmPwd();
@@ -16,8 +17,8 @@ namespace pwd{
         void    removePwd(int id);
         string  getPassword(int id) const; // Return the value of the password
         string  getDescription(int id) const;
-        void    setPassword(int id);
-        void    setDescription(string des);
+        void    setPassword(int id, int length=0, string pass="");
+        void    setDescription(int id, string des);
         void    show() const;
     };
 
