@@ -10,13 +10,32 @@ namespace pwd{
 	/*
 		Private Methods
 	*/
-	bool PWD::character_valid(char c){
-		if (this->value.find(c) == -1){
-
-            return true;
-        } else{
-            return false;
+    bool PWD::character_valid(char c){
+        for(int k=0;k<LENGTH_NVC;k++){
+            if (c == not_valid_characters[k]){
+                //cout << "Character not valid" << endl;
+                return false;
+            }
         }
+
+        return true;
+    }
+
+	char PWD::getCharacter(int pos){
+
+        if ((pos != 0) && (rand()%10 == 0)){
+            //cout << "Repeat value " << endl;
+            return this->value[rand()%pos];
+        }
+
+        char tmp;
+
+        do{
+            tmp = (rand()%93) + 32;
+
+        }while(!character_valid(tmp));
+
+        return tmp;
 	}
 
 
@@ -64,20 +83,12 @@ namespace pwd{
     //====================================================================
     //--------------------------------------------------------------------
 	void PWD::createPass(int length){
-		srandom(time(NULL));
+        srandom(time(NULL));
 
-        //cout << "Starting..."<<endl;
+        this->value = "";
 		for(int k=0;k<length;k++){
-            char tmp;
             //cout << "Password:" << this->value << endl;
-			do{
-                tmp = (rand()%94) + 33;
-
-                //cout << "Generated random character -> " << tmp <<endl;
-
-			}while(	!character_valid(tmp));
-			
-			this->value += tmp;
+            this->value += getCharacter(k);
 		}
 	}
     //====================================================================
